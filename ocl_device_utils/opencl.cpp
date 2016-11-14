@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 #include <stdio.h>
-
+#include <system_error>
 extern cl_platform_id gPlatform;
 // extern cl_program gProgram;
 
@@ -36,7 +36,7 @@ bool clInitialize(int requiredPlatform, std::vector<cl_device_id> &gpus)
   
   
   if (platformIdx == -1) {
-    printf("<error> platform %s not exists\n", requiredPlatform);
+    printf("<error> platform %i not exists\n", requiredPlatform);
     return false;
   }
   
